@@ -1,6 +1,6 @@
 # udemy-nextjs-react-the-complete-guide
 
-##
+
 
 echo "# udemy-nextjs-react-the-complete-guide" >> README.md
 
