@@ -34,9 +34,9 @@ git branch <branch-name>
 
 git branch 1-prj-routing
 
-git checkout <branch-name>
+git checkout -b <branch-name>
 
-git checkout '1-prj-routing'
+git checkout -b '1-prj-routing'
 
 git push -u <remote> <branch-name>
 
