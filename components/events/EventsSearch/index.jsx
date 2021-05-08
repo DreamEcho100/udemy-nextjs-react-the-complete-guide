@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 // import classes from './EventsSearch.module.css'
 const classes = {
 	form: 'events__EventsSearch', // 'form',
@@ -8,7 +10,6 @@ const classes = {
 import './EventsSearch.scss';
 
 import Button from '@/components/ui/Button/index';
-import { useRef } from 'react';
 
 const EventsSearch = ({ onSearch }) => {
 	const yearInputRef = useRef();

@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 
-import { getAllEvents } from '../../dummy-data';
+import { getAllEvents } from '@/dummy-data';
 
-import EventList from '@/components/events/EventList/index';
 import EventsSearch from '@/components/events/EventsSearch/index';
+import EventList from '@/components/events/EventList/index';
 
 const AllEventsPage = () => {
 	const router = useRouter();
