@@ -5,11 +5,19 @@ const classes = {
 	btn: 'ui__Button', // 'btn',
 };
 
-const Button = ({ link, children }) => {
+const Button = ({ link, onClick, children }) => {
+	if (link) {
+		return (
+			<Link href={link}>
+				<a className={classes.btn}>{children}</a>
+			</Link>
+		);
+	}
+
 	return (
-		<Link href={link}>
-			<a className={classes.btn}>{children}</a>
-		</Link>
+		<button className={classes.btn} onClick={onClick}>
+			{children}
+		</button>
 	);
 };
 
