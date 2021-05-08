@@ -1,6 +1,15 @@
 import Link from 'next/link';
 
-import classes from './EventItem.module.css';
+// import classes from './EventItem.module.css';
+const classes = {
+	img: 'img',
+	item: 'item',
+	content: 'content',
+	summary: 'summary',
+	date: 'date',
+	address: 'address',
+	actions: 'actions',
+};
 
 const EventItem = ({ id, title, location, date, image }) => {
 	const humanReadableDate = new Date(date).toLocaleDateString('en-US', {
@@ -14,7 +23,11 @@ const EventItem = ({ id, title, location, date, image }) => {
 
 	return (
 		<li className={classes.item}>
-			<img src={`/${image}`} alt={title} />
+			{/* <img src={`/${image}`} alt={title} /> */}
+			<div
+				className={classes.img}
+				style={{ backgroundImage: `url(${image})` }}
+			></div>
 			<div className={classes.content}>
 				<div className={classes.summary}>
 					<h2>{title}</h2>

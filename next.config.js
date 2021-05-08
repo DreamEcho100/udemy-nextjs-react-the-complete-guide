@@ -10,31 +10,16 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = withCss(
 	withSass({
-		webpack: (config) => {
+		// future: {
+		// 	webpack5: true,
+		// },
+		webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
 			config.resolve.alias['@'] = path.resolve(__dirname);
 			config.plugins.push(new Dotenv({ silent: true }));
+			// config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
 			// config.module.rules.push({
 			// 	test: /\.css$/i,
 			// 	use: ['style-loader', 'css-loader'],
-			// });
-			config.module.rules.push({
-				test: /\.css$/i,
-				use: ['style-loader', 'css-loader'],
-			});
-			// config.module.rules.push({
-			// 	test: /\.css$/,
-			// 	use: [
-			// 		'style-loader',
-			// 		{
-			// 			loader: 'css-loader',
-			// 			options: {
-			// 				minimize: true,
-			// 				camelCase: 'dashes',
-			// 				modules: true,
-			// 				localIdentName: '[name]__[local]___[hash:base64:5]',
-			// 			},
-			// 		},
-			// 	],
 			// });
 			if (config.mode === 'production') {
 				if (Array.isArray(config.optimization.minimizer)) {
