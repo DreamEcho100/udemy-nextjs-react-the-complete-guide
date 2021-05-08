@@ -4,12 +4,12 @@ import './EventIist.scss';
 
 // import classes from './EventIist.module.css';
 const classes = {
-	list: 'list',
+	list: 'events__event-list', // 'list',
 };
 
 const EventIist = ({ items = [] }) => {
 	return (
-		<ul className={`events__event-list ${classes.list}`}>
+		<ul className={classes.list}>
 			{items.map(({ id, title, location, date, image }) => (
 				<EventItem
 					key={id}
