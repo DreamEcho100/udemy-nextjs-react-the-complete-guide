@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 // import classes from './EventItem.module.css';
 const classes = {
+	item: 'events__EventIist__EventItem', // 'item',
 	img: 'img',
-	item: 'item',
 	content: 'content',
 	summary: 'summary',
 	date: 'date',
@@ -11,6 +11,8 @@ const classes = {
 	actions: 'actions',
 	icon: 'icon',
 };
+
+import './EventItem.scss';
 
 import Button from '@/components/ui/Button';
 import DateIcon from '@/components/icons/DateIcon';

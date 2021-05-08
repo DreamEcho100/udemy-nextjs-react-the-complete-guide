@@ -1,11 +1,11 @@
-import EventItem from './EventItem';
-
-import './EventIist.scss';
+import EventItem from './EventItem/index';
 
 // import classes from './EventIist.module.css';
 const classes = {
-	list: 'events__event-list', // 'list',
+	list: 'events__EventIist', // 'list',
 };
+
+import './EventIist.scss';
 
 const EventIist = ({ items = [] }) => {
 	return (

@@ -1,4 +1,12 @@
-#
+##
+
+`echo 'const EventSummary = () => {return (<div><h1>Hello! This is Event Summary Page</h1></div>)}; export default EventSummary;' >> 'EventSummary.jsx'`
+
+`echo 'const EventLogistics = () => {return (<div><h1>Hello! This is Event Logistics Page</h1></div>)}; export default EventLogistics;' >> 'EventLogistics.jsx'`
+
+`echo 'const EventContent = () => {return (<div><h1>Hello! This is Event Content Page</h1></div>)}; export default EventContent;' >> 'EventContent.jsx'`
+
+##
 
 git add .
 

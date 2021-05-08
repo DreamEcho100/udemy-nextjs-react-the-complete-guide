@@ -50,6 +50,6 @@ export const getFilteredEvents = (dataFilter) => {
 	});
 };
 
-export const getEventsById = (id) => {
+export const getEventById = (id) => {
 	return DUMMY_EVENTS.find((event) => event.id === id);
 };
