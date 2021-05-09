@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-// import classes from './button.module.css';
+// import classes from './Button.module.css';
 const classes = {
 	btn: 'ui__Button', // 'btn',
 };
+
+import './Button.scss';
 
 const Button = ({ link, onClick, children }) => {
 	if (link) {

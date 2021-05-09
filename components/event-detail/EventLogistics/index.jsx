@@ -10,13 +10,13 @@ import AddressIcon from '@/components/icons/AddressIcon';
 import DateIcon from '@/components/icons/DateIcon';
 import LogisticsItem from './LogisticsItem/index';
 
-const EventLogistics = ({ date, address, image, imageAlt }) => {
+const EventLogistics = ({ date, location, image, imageAlt }) => {
 	const humanReadableDate = new Date(date).toLocaleDateString('en-US', {
 		day: 'numeric',
 		month: 'long',
 		year: 'numeric',
 	});
-	const addressText = address.replace(', ', '\n');
+	const locationText = location.replace(', ', '\n');
 
 	return (
 		<section className={classes.logistics}>
@@ -28,7 +28,7 @@ const EventLogistics = ({ date, address, image, imageAlt }) => {
 					<time>{humanReadableDate}</time>
 				</LogisticsItem>
 				<LogisticsItem icon={AddressIcon}>
-					<address>{addressText}</address>
+					<address>{locationText}</address>
 				</LogisticsItem>
 			</ul>
 		</section>

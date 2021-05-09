@@ -13,24 +13,26 @@ const EventDetail = ({
 	event: {
 		title = '',
 		date = '',
-		address = '',
+		location = '',
 		image = '',
 		imageAlt = '',
 		description = '',
 	},
-}) => (
-	<main>
-		<EventSummary title={title} />
-		<EventLogistics
-			date={date}
-			address={address}
-			image={image}
-			imageAlt={imageAlt}
-		/>
-		<EventContent>
-			<p>{description}</p>
-		</EventContent>
-	</main>
-);
+}) => {
+	return (
+		<main>
+			<EventSummary title={title} />
+			<EventLogistics
+				date={date}
+				location={location}
+				image={image}
+				imageAlt={imageAlt}
+			/>
+			<EventContent>
+				<p>{description}</p>
+			</EventContent>
+		</main>
+	);
+};
 
 export default EventDetail;

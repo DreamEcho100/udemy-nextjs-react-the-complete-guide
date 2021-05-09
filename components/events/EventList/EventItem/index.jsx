@@ -19,7 +19,13 @@ import DateIcon from '@/components/icons/DateIcon';
 import AddressIcon from '@/components/icons/AddressIcon';
 import ArrowRightIcon from '@/components/icons/ArrowRightIcon';
 
-const EventItem = ({ id, title, location, date, image }) => {
+const EventItem = ({
+	id = '',
+	title = '',
+	location = '',
+	date = '',
+	image = '',
+}) => {
 	const humanReadableDate = new Date(date).toLocaleDateString('en-US', {
 		day: 'numeric',
 		month: 'long',
@@ -34,7 +40,7 @@ const EventItem = ({ id, title, location, date, image }) => {
 			{/* <img src={`/${image}`} alt={title} /> */}
 			<div
 				className={classes.img}
-				style={{ backgroundImage: `url(${image})` }}
+				style={{ backgroundImage: `url(/${image})` }}
 			></div>
 			<div className={classes.content}>
 				<div className={classes.summary}>
