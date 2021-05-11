@@ -1,64 +1,34 @@
-# udemy-nextjs-react-the-complete-guide
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Getting Started
 
+First, run the development server:
 
-echo "# udemy-nextjs-react-the-complete-guide" >> README.md
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-git init
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-git add README.md
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-git commit -m "first commit"
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-git branch -M main
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-git remote add origin https://github.com/DreamEcho100/udemy-nextjs-react-the-complete-guide.git
+## Learn More
 
-git push -u origin main
+To learn more about Next.js, take a look at the following resources:
 
-##
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-echo "# udemy-nextjs-react-the-complete-guide" >> README.md
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-git init
+## Deploy on Vercel
 
-git add README.md
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-git commit -m "first commit"
-
-git branch -M main
-
-git remote add origin https://github.com/DreamEcho100/udemy-nextjs-react-the-complete-guide.git
-
-### Create a new branch
-
-git branch <branch-name>
-
-git branch 1-prj-routing
-
-### Switch to the new branch you just created
-
-git checkout -b <branch-name>
-
-git checkout -b '1-prj-routing'
-
-### Create the new branch and immediately switch you to it
-
-git checkout -b <branch-name>
-
-git checkout -b '1-prj-routing'
-
-### To publish the new branch you created in GitHub
-
-git push -u <remote> <branch-name>
-
-git push -u origin '1-prj-routing'
-
-##
-
-git add .
-
-git commit -m 'Upload&Update...'
-
-git push -u origin main
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
