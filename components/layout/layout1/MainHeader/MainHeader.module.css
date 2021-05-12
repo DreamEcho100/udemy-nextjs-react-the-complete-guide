@@ -1,0 +1,40 @@
+.header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	padding: 1rem 10%;
+	background-color: #202020;
+}
+
+.logo {
+	font-size: var(1.5rem + var(--incerment-1));
+	color: white;
+	font-family: 'Fira', sans-serif;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #94fdfd;
+}
+
+.logo a {
+	text-decoration: none;
+	color: #94fdfd;
+}
+
+.navigation a {
+	text-decoration: none;
+	color: #74dacc;
+	font-size: var(1.4rem + var(--incerment-1));
+}
+
+@media (min-width: 768px) {
+	.logo {
+		font-size: var(2.5rem + var(--incerment-1));
+	}
+
+	.navigation a {
+		font-size: var(2.5rem + var(--incerment-1));
+	}
+}
