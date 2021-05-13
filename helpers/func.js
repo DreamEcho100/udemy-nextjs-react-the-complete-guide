@@ -6,9 +6,6 @@ export const dateToHumanReadableDate = (date = new Date(), options) => {
 		options && options.monthFormat ? options.monthFormat : 'long';
 	const yearFormat =
 		options && options.yearFormat ? options.yearFormat : 'numeric';
-	options && console.log(options.dayFormat, dayFormat);
-
-	// console.log(locales, dayFormat, monthFormat, yearFormat);
 
 	return new Date(date).toLocaleDateString(locales, {
 		day: dayFormat === 'none' ? undefined : dayFormat,
