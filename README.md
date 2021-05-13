@@ -38,9 +38,9 @@ git branch 1-prj-routing
 
 ### Switch to the new branch you just created
 
-git checkout -b <branch-name>
+git checkout <branch-name>
 
-git checkout -b '1-prj-routing'
+git checkout '1-prj-routing'
 
 ### Create the new branch and immediately switch you to it
 
