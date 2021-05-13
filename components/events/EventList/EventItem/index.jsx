@@ -2,6 +2,8 @@ import Link from 'next/link';
 
 import classes from './EventItem.module.css';
 
+import { dateToHumanReadableDate } from '@/helpers/func';
+
 import Button from '@/components/ui/Button';
 import DateIcon from '@/components/icons/DateIcon';
 import AddressIcon from '@/components/icons/AddressIcon';
@@ -14,11 +16,7 @@ const EventItem = ({
 	date = '',
 	image = '',
 }) => {
-	const humanReadableDate = new Date(date).toLocaleDateString('en-US', {
-		day: 'numeric',
-		month: 'long',
-		year: 'numeric',
-	});
+	const humanReadableDate = dateToHumanReadableDate(date);
 
 	const formattedAddres = location.replace(', ', '\n');
 	const exploreLink = `/events/${id}`;

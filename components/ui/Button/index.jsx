@@ -2,17 +2,22 @@ import Link from 'next/link';
 
 import classes from './Button.module.css';
 
-const Button = ({ link, onClick, children }) => {
+const Button = ({ className, link, onClick, children }) => {
 	if (link) {
 		return (
 			<Link href={link}>
-				<a className={classes.btn}>{children}</a>
+				<a className={`${classes.btn}${className ? ` ${className}` : ''}`}>
+					{children}
+				</a>
 			</Link>
 		);
 	}
 
 	return (
-		<button className={classes.btn} onClick={onClick}>
+		<button
+			className={`${classes.btn}${className ? ` ${className}` : ''}`}
+			onClick={onClick}
+		>
 			{children}
 		</button>
 	);

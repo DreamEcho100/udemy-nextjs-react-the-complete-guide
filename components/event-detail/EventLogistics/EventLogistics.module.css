@@ -2,10 +2,10 @@
 	box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.2);
 	border-radius: 0.6rem;
 	background-color: #2b2b2b;
-	padding: 2rem;
+	padding: 1em;
 	max-width: 50rem;
 	width: 80%;
-	margin: -3rem auto;
+	margin: -1.5em auto;
 	color: #d5eeeb;
 	display: flex;
 	justify-content: space-between;
@@ -43,8 +43,8 @@
 
 @media (min-width: 768px) {
 	.logistics {
-		padding: 2rem;
-		margin: -5rem auto;
+		padding: 1em;
+		margin: -2.5em auto;
 		gap: 3rem;
 		flex-direction: row;
 		align-items: stretch;

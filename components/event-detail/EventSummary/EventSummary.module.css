@@ -6,7 +6,7 @@
 
 .summary h1 {
 	margin: 0;
-	padding-top: 3rem;
+	padding-top: 0.5em;
 	font-size: var(2rem + var(--incerment-1));
 	text-align: center;
 	text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
