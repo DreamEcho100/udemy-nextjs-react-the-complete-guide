@@ -3,11 +3,7 @@ import { getFeaturedEvents } from '../helpers/api-util';
 import EventList from '@/components/events/EventList/index';
 
 const index = ({ events }) => {
-	return (
-		<>
-			<EventList items={events} />
-		</>
-	);
+	return <EventList items={events} />;
 };
 
 export default index;
@@ -19,5 +15,6 @@ export const getStaticProps = async () => {
 		props: {
 			events: featuredEvents,
 		},
+		revalidate: 1800,
 	};
 };

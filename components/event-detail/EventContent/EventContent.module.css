@@ -2,8 +2,8 @@
 	font-size: var(1.5rem + var(--incerment-1));
 	color: #3a3a3a;
 	width: 90%;
-	max-width: 40em;
+	max-width: 40rem;
 	margin: auto;
-	margin-top: 8rem;
+	margin-top: 6rem;
 	text-align: center;
 }

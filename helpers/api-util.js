@@ -16,7 +16,6 @@ export const getAllEvents = async () => {
 		})
 		.catch((error) => {
 			console.error(error);
-			return;
 		});
 
 	return events;
