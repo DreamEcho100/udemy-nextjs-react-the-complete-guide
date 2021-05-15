@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
+import Head from 'next/head';
 
 import { getFilteredEvents } from '../../helpers/api-util';
 
@@ -8,6 +9,22 @@ import EventList from '@/components/events/EventList/index';
 import ResultsTitle from '@/components/events/ResultsTitle/index';
 import Button from '@/components/ui/Button/index';
 import ErrorAlert from '@/components/ui/ErrorAlert/index';
+
+const PageHeadData = ({ title, description, noIndex, noFollow }) => {
+	let currentDescription = description
+		? description
+		: `A list of filtered events Page.`;
+	let currentTitle = title ? title : 'Filtered Events Page';
+	const robotsContent =
+		(noIndex ? 'noindex' : 'index') + ',' + (noFollow ? 'nofollow' : 'follow');
+	return (
+		<Head>
+			{(noFollow || noIndex) && <meta name='robots' content={robotsContent} />}
+			<title>{currentTitle}</title>
+			<meta name='description' content={currentDescription} />
+		</Head>
+	);
+};
 
 const FilteredEventsPage = (/*{ events, date, hasError }*/) => {
 	const router = useRouter();
@@ -35,7 +52,17 @@ const FilteredEventsPage = (/*{ events, date, hasError }*/) => {
 	}, [data]);
 
 	if (!loadedEvents) {
-		return <p className='center'>Loading...</p>;
+		return (
+			<>
+				<PageHeadData
+					title='Loading... | Filtered Events Page'
+					description='Loading... | Filtered Events Page'
+					noIndex={true}
+					noFollow={true}
+				/>
+				<p className='center'>Loading...</p>
+			</>
+		);
 	}
 
 	const filterData = router.query.slug;
@@ -57,6 +84,12 @@ const FilteredEventsPage = (/*{ events, date, hasError }*/) => {
 		return (
 			<>
 				<ErrorAlert>
+					<PageHeadData
+						title='Invalid filter. Please adjust your values! | Filtered Events Page'
+						description='Invalid filter. Please adjust your values! | Filtered Events Page'
+						noIndex={true}
+						noFollow={true}
+					/>
 					<p>Invalid filter. Please adjust your values!</p>
 				</ErrorAlert>
 				<div className='center'>
@@ -80,6 +113,12 @@ const FilteredEventsPage = (/*{ events, date, hasError }*/) => {
 		return (
 			<>
 				<ErrorAlert>
+					<PageHeadData
+						title='No events found for the chosen filter! | Filtered Events Page'
+						description='No events found for the chosen filter! | Filtered Events Page'
+						noIndex={true}
+						noFollow={true}
+					/>
 					<p>No events found for the chosen filter!</p>
 				</ErrorAlert>
 				<div className='center'>
@@ -91,6 +130,10 @@ const FilteredEventsPage = (/*{ events, date, hasError }*/) => {
 
 	return (
 		<>
+			<PageHeadData
+				title={`All events for ${numMonth}/${numYear} | Filtered Events Page`}
+				description={`All events for ${numMonth}/${numYear}.`}
+			/>
 			<ResultsTitle date={date} />
 			<EventList items={filteredEvents} />
 		</>

@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import { getEventById, getFeaturedEvents } from '@/helpers/api-util';
 
 import EventDetail from '@/components/event-detail/EventDetail';
@@ -23,7 +25,15 @@ const EventDetailPage = ({ selectedEvent }) => {
 		);
 	}
 
-	return <EventDetail event={event} />;
+	return (
+		<>
+			<Head>
+				<title>{event.title}</title>
+				<meta name='description' content={event.description} />
+			</Head>
+			<EventDetail event={event} />
+		</>
+	);
 };
 
 export default EventDetailPage;
