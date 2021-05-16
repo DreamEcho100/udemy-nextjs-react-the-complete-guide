@@ -33,7 +33,7 @@ const EventDetailPage = ({ selectedEvent }) => {
 				<meta name='description' content={event.description} />
 			</Head>
 			<EventDetail event={event} />
-			<Comments />
+			<Comments eventId={event.id} />
 		</>
 	);
 };
