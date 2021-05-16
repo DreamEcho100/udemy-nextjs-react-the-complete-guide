@@ -4,6 +4,7 @@ import { getEventById, getFeaturedEvents } from '@/helpers/api-util';
 
 import EventDetail from '@/components/event-detail/EventDetail';
 import ErrorAlert from '@/components/ui/ErrorAlert/index';
+import Comments from '@/components/input/Comments/index';
 
 const EventDetailPage = ({ selectedEvent }) => {
 	const event = selectedEvent;
@@ -32,11 +33,10 @@ const EventDetailPage = ({ selectedEvent }) => {
 				<meta name='description' content={event.description} />
 			</Head>
 			<EventDetail event={event} />
+			<Comments />
 		</>
 	);
 };
-
-export default EventDetailPage;
 
 export const getStaticProps = async (context) => {
 	const eventId = context.params.eventId;
@@ -72,3 +72,5 @@ export const getStaticPaths = async () => {
 		fallback: 'blocking',
 	};
 };
+
+export default EventDetailPage;

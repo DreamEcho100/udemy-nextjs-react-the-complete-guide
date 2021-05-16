@@ -1,0 +1,43 @@
+.newsletter {
+	margin: 1em auto;
+	width: 90%;
+	max-width: 35rem;
+}
+
+.newsletter h2 {
+	text-align: center;
+}
+
+.control input {
+	font: inherit;
+	padding: 0.25em;
+	border-radius: 0.4rem;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border: 0.1rem solid #ccc;
+}
+
+.newsletter button {
+	background-color: #03be9f;
+	border: 0.1rem solid #03be9f;
+	border-radius: 0.6rem;
+	color: #dafff7;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	font: inherit;
+	cursor: pointer;
+}
+
+.newsletter button:hover,
+.newsletter button:active {
+	background-color: #02afa1;
+	border-color: #02afa1;
+}
+
+.control {
+	display: flex;
+}
+
+.control input {
+	flex: 1;
+}

@@ -1,12 +1,16 @@
 import { getFeaturedEvents } from '../helpers/api-util';
 
 import EventList from '@/components/events/EventList/index';
+import NewsletterRegistration from '@/components/input/NewsletteRegisteration/index';
 
 const index = ({ events }) => {
-	return <EventList items={events} />;
+	return (
+		<>
+			<NewsletterRegistration />
+			<EventList items={events} />
+		</>
+	);
 };
-
-export default index;
 
 export const getStaticProps = async () => {
 	const featuredEvents = await getFeaturedEvents();
@@ -18,3 +22,5 @@ export const getStaticProps = async () => {
 		revalidate: 1800,
 	};
 };
+
+export default index;
