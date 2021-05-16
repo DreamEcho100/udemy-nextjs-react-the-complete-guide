@@ -22,8 +22,8 @@ const Comments = ({ eventId }) => {
 		setShowComments((prevStatus) => !prevStatus);
 	};
 
-	const addCommentHandler = (commentData) => {
-		fetch(`/api/v1/comments/${eventId}`, {
+	const addCommentHandler = async (commentData) => {
+		return await fetch(`/api/v1/comments/${eventId}`, {
 			method: 'POST',
 			body: JSON.stringify(commentData),
 			headers: {
@@ -31,8 +31,11 @@ const Comments = ({ eventId }) => {
 			},
 		})
 			.then((response) => response.json())
-			.then((data) => console.log(data))
-			.catch((error) => console.error(error));
+			.then((data) => data.comment)
+			.catch((error) => {
+				console.error(error);
+				return {};
+			});
 	};
 
 	return (
@@ -40,7 +43,13 @@ const Comments = ({ eventId }) => {
 			<button onClick={toggleCommentsHandler}>
 				{showComments ? 'Hide' : 'Show'} Comments
 			</button>
-			{showComments && <NewComment onAddComment={addCommentHandler} />}
+			{showComments && (
+				<NewComment
+					comments={comments}
+					setComments={setComments}
+					onAddComment={addCommentHandler}
+				/>
+			)}
 			{showComments && <CommentList items={comments} />}
 		</section>
 	);
