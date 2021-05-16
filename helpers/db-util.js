@@ -28,10 +28,11 @@ export const insertDocument = async (client, collection, document) => {
 	return result;
 };
 
-export const getAllDocuments = async (client, collection, sort) => {
+export const getAllDocuments = async (client, collection, findBy, sort) => {
 	const db = client.db();
 
-	const documents = await db.collection(collection).find().sort(sort).toArray();
+	const documents = findBy || findBy !== 'all' ? await db.collection(collection).find(findBy).sort(sort).toArray() :
+	await db.collection(collection).find().sort(sort).toArray();
 
 	return documents;
 };

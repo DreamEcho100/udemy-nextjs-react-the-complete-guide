@@ -51,9 +51,15 @@ const handler = async (req, res) => {
 	}
 
 	if (req.method === 'GET') {
+		const { eventId } = req.query;
 		let documents;
 		try {
-			documents = await getAllDocuments(client, 'comments', { id: -1 });
+			documents = await getAllDocuments(
+				client,
+				'comments',
+				{ eventId: eventId },
+				{ id: -1 }
+			);
 		} catch (error) {
 			res.status(500).json({ message: 'Getting comments failed.' });
 		}

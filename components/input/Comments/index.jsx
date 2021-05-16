@@ -10,7 +10,7 @@ const Comments = ({ eventId }) => {
 	const [comments, setComments] = useState([]);
 
 	useEffect(() => {
-		if (setShowComments) {
+		if (showComments && comments.length === 0) {
 			fetch(`/api/v1/comments/${eventId}`)
 				.then((response) => response.json())
 				.then((data) => setComments(data.comments))
