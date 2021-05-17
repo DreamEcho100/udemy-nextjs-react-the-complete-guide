@@ -1,8 +1,8 @@
-import EventItem from './EventItem/index';
+import EventItem from './EventItem/EventItem';
 
-import classes from './EventIist.module.css';
+import classes from './EventList.module.css';
 
-const EventIist = ({ items = [] }) => {
+const EventList = ({ items = [] }) => {
 	return (
 		<ul className={classes.list}>
 			{items.map(({ id, title, location, date, image }) => (
@@ -19,4 +19,4 @@ const EventIist = ({ items = [] }) => {
 	);
 };
 
-export default EventIist;
+export default EventList;

@@ -1,7 +1,7 @@
 import { getFeaturedEvents } from '../helpers/api-util';
 
-import EventList from '@/components/events/EventList/index';
-import NewsletterRegistration from '@/components/input/NewsletteRegisteration/index';
+import EventList from '@/components/events/EventList/EventList';
+import NewsletterRegistration from '@/components/input/NewsletteRegisteration/NewsletteRegisteration';
 
 const index = ({ events }) => {
 	return (

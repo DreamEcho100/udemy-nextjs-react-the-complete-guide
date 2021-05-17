@@ -3,8 +3,8 @@ import Head from 'next/head';
 import { getEventById, getFeaturedEvents } from '@/helpers/api-util';
 
 import EventDetail from '@/components/event-detail/EventDetail';
-import ErrorAlert from '@/components/ui/ErrorAlert/index';
-import Comments from '@/components/input/Comments/index';
+import ErrorAlert from '@/components/ui/ErrorAlert/ErrorAlert';
+import Comments from '@/components/input/Comments/Comments';
 
 const EventDetailPage = ({ selectedEvent }) => {
 	const event = selectedEvent;

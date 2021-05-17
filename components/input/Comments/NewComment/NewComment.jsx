@@ -35,7 +35,7 @@ const NewComment = ({ comments, setComments, onAddComment }) => {
 			text: enteredComment,
 		});
 
-		setComments([addedComment, ...comments]);
+		setComments([...comments, addedComment]);
 	};
 
 	return (

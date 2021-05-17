@@ -6,7 +6,7 @@ import { dateToHumanReadableDate } from '@/helpers/func';
 
 import AddressIcon from '@/components/icons/AddressIcon';
 import DateIcon from '@/components/icons/DateIcon';
-import LogisticsItem from './LogisticsItem/index';
+import LogisticsItem from './LogisticsItem/LogisticsItem';
 
 const EventLogistics = ({ date, location, image, imageAlt }) => {
 	// const humanReadableDate = new Date(date).toLocaleDateString('en-US', {

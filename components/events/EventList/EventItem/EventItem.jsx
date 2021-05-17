@@ -4,7 +4,7 @@ import classes from './EventItem.module.css';
 
 import { dateToHumanReadableDate } from '@/helpers/func';
 
-import Button from '@/components/ui/Button';
+import Button from '@/components/ui/Button/Button';
 import DateIcon from '@/components/icons/DateIcon';
 import AddressIcon from '@/components/icons/AddressIcon';
 import ArrowRightIcon from '@/components/icons/ArrowRightIcon';

@@ -61,7 +61,7 @@ const handler = async (req, res) => {
 				{ id: -1 }
 			);
 		} catch (error) {
-			res.status(500).json({ message: 'Getting comments failed.' });
+			return res.status(500).json({ message: 'Getting comments failed.' });
 		}
 
 		res.status(200).json({ comments: documents });

@@ -1,6 +1,6 @@
 import { dateToHumanReadableDate } from '@/helpers/func';
 
-import Button from '@/components/ui/Button';
+import Button from '@/components/ui/Button/Button';
 import classes from './ResultsTitle.module.css';
 
 const ResultsTitle = ({ date }) => {

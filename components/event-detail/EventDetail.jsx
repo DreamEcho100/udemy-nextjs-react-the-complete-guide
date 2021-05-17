@@ -1,8 +1,8 @@
 import classes from './EventDetail.module.css';
 
-import EventSummary from './EventSummary/index';
-import EventLogistics from './EventLogistics/index';
-import EventContent from './EventContent/index';
+import EventSummary from './EventSummary/EventSummary';
+import EventLogistics from './EventLogistics/EventLogistics';
+import EventContent from './EventContent/EventContent';
 
 const EventDetail = ({
 	event: {

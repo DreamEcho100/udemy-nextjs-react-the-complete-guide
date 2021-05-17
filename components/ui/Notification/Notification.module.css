@@ -1,0 +1,74 @@
+.notification {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 5rem;
+	width: 100%;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #1b1b1b;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+	padding: 0.5rem 10%;
+	box-shadow: 0 -0.3rem 0.6rem rgba(0, 0, 0, 0.2);
+	user-select: none;
+}
+
+.container h2 {
+	margin: 0;
+	font-size: 1.25rem;
+	color: white;
+}
+
+.container .closeBtnContainer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 2rem;
+	height: 2rem;
+}
+
+.closeBtnContainer .closeBtn {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	width: 2rem;
+	height: 2rem;
+}
+
+.closeBtnContainer .closeBtn::before,
+.closeBtnContainer .closeBtn::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	width: 100%;
+	height: 25%;
+	background-color: #1b1b1b;
+	cursor: pointer;
+}
+
+.closeBtnContainer .closeBtn::before {
+	transform: translate(0%, -50%) rotate(45deg);
+}
+.closeBtnContainer .closeBtn::after {
+	transform: translate(0%, -50%) rotate(-45deg);
+}
+
+.pending {
+	background-color: #177cbe;
+}
+
+.success {
+	background-color: #10be58;
+}
+
+.error {
+	background-color: #e65035;
+}

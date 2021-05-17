@@ -5,10 +5,10 @@ import Head from 'next/head';
 
 import { getFilteredEvents } from '../../helpers/api-util';
 
-import EventList from '@/components/events/EventList/index';
-import ResultsTitle from '@/components/events/ResultsTitle/index';
-import Button from '@/components/ui/Button/index';
-import ErrorAlert from '@/components/ui/ErrorAlert/index';
+import EventList from '@/components/events/EventList/EventList';
+import ResultsTitle from '@/components/events/ResultsTitle/ResultsTitle';
+import Button from '@/components/ui/Button/Button';
+import ErrorAlert from '@/components/ui/ErrorAlert/ErrorAlert';
 
 const PageHeadData = ({ title, description, noIndex, noFollow }) => {
 	let currentDescription = description
