@@ -6,10 +6,15 @@ import {
 	// vsDark,
 	vscDarkPlus,
 } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
+import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
 
 import classes from './PostContent.module.css';
 
 import PostHeader from './PostHeader/PostHeader';
+
+// SyntaxHighlighter.registerLanguage('js', js);
+// SyntaxHighlighter.registerLanguage('css', css);
 
 const PostContent = ({ post }) => {
 	const imagePath = `/images/posts/${post.slug}/${post.image}`;
@@ -30,15 +35,20 @@ const PostContent = ({ post }) => {
 
 			if (node.children[0].tagName === 'img') {
 				const image = node.children[0];
+				let imgSrc;
+
+				if (
+					/^https:\/\//.test(image.properties.src) ||
+					/^http:\/\//.test(image.properties.src)
+				) {
+					imgSrc = image.properties.src;
+				} else {
+					imgSrc = `/images/posts/${post.slug}/${image.properties.src}`;
+				}
 
 				return (
 					<div className={classes.image}>
-						<Image
-							src={`/images/posts/${post.slug}/${image.properties.src}`}
-							alt={image.alt}
-							width={600}
-							height={300}
-						/>
+						<Image src={imgSrc} alt={image.alt} width={600} height={300} />
 					</div>
 				);
 			}
