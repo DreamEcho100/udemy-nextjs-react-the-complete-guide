@@ -1,4 +1,5 @@
 import { useContext, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 import classes from './Notification.module.css';
 
@@ -18,11 +19,12 @@ const Notification = ({ title, message, status }) => {
 
 	const cssClasses = `${classes.notification} ${statusClasses}`;
 
-	return (
+	return createPortal(
 		<div className={cssClasses}>
 			<h2>{title}</h2>
 			<p>{message}</p>
-		</div>
+		</div>,
+		document.getElementById('notifications')
 	);
 
 	return (

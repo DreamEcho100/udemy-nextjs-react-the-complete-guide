@@ -31,7 +31,65 @@ const PostContent = ({ post }) => {
 		//   );
 		// },
 		p(paragraph) {
-			const { node } = paragraph;
+			const { node, ...props } = paragraph;
+
+			/*
+			if (node.children[1] && node.children[1].tagName === 'a') {
+				if (
+					node.children[2] &&
+					node.children[2].value.includes('extraAttributesStart')
+				) {
+					const EAS = 'extraAttributesStart';
+					const EAE = 'extraAttributesEnd';
+
+					const EASIndex = node.children[2].value.indexOf(EAS);
+					const EAEIndex = node.children[2].value.indexOf(EAE);
+
+					const anchorHref = node.children[1].properties.href;
+
+					let anchorAttributes = {};
+					let anchorAttributesError = '';
+					try {
+						anchorAttributes = JSON.parse(
+							node.children[2].value.substr(
+								EAS.length + EASIndex,
+								EAEIndex - EAE.length - 2
+							)
+						);
+					} catch (error) {
+						console.error(error);
+						anchorAttributesError = error.message;
+					}
+
+					const firstText = `${node.children[0].value}`;
+					const anchorText = `${node.children[1].children[0].value}`;
+					const lastText = node.children[2].value.substr(EAEIndex + EAE.length);
+
+					return (
+						<p>
+							{firstText}
+							{anchorAttributesError ? (
+								<div
+									style={{ color: 'red', fontSize: '4rem', fontWeight: '900' }}
+								>
+									{anchorAttributesError}
+								</div>
+							) : (
+								<a
+									href={anchorHref}
+									{...anchorAttributes}
+									// target='_blank'
+									rel='noopener noreferrer'
+								>
+									{anchorText}
+								</a>
+							)}
+							{lastText}
+						</p>
+					);
+				}
+			}
+			*/
 
 			if (node.children[0].tagName === 'img') {
 				const image = node.children[0];

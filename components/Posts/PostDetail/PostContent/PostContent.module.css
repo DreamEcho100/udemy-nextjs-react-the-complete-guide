@@ -9,6 +9,13 @@
 	padding: var(--size-4);
 }
 
+.content a,
+.content a:visited,
+.content a:active {
+	color: var(--color-success-500);
+	font-weight: 500;
+}
+
 .content p {
 	color: var(--color-grey-800);
 }

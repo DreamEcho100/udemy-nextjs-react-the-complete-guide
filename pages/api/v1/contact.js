@@ -35,8 +35,6 @@ const handler = async (req, res) => {
 				clustername: process.env.MONGODB_CLUSTERNAME,
 				database: process.env.MONGODB_MAZENEXTBLOG_DATABASE,
 			});
-
-			console.log('connected');
 		} catch (error) {
 			res.status(500).json({
 				message: error.message || 'Connecting to the database failed!',

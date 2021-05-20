@@ -38,7 +38,7 @@ const ContactForm = () => {
 		}
 	}, [requestStatus]);
 
-	function sendMessageHandler(event) {
+	const sendMessageHandler = async (event) => {
 		event.preventDefault();
 
 		// optional: add client-side validation
@@ -46,29 +46,27 @@ const ContactForm = () => {
 		setRequestStatus('pending');
 
 		try {
-			fetch('/api/v1/contact', {
-				method: 'POST',
-				body: JSON.stringify({
-					email: enteredEmail,
-					name: enteredName,
-					message: enteredMessage,
-				}),
-				headers: {
-					'Content-Type': 'application/json',
-				},
+			await sendContactData({
+				email: enteredEmail,
+				name: enteredName,
+				message: enteredMessage,
 			});
+			setRequestStatus('success');
+			setEnteredMessage('');
+			setEnteredEmail('');
+			setEnteredName('');
 		} catch (error) {
 			setRequestError(error.message);
 			setRequestStatus('error');
 		}
-	}
+	};
 
 	const notification =
 		requestStatus === 'pending'
 			? {
 					status: 'pending',
 					title: 'Sending message...',
-					message: 'Your message is on its way!',
+					message: "Your message is on it's way!",
 			  }
 			: requestStatus === 'success'
 			? {
@@ -106,7 +104,7 @@ const ContactForm = () => {
 							id='email'
 							required
 							value={enteredEmail}
-							onChange={(event) => setEnteredName(event.target.value)}
+							onChange={(event) => setEnteredEmail(event.target.value)}
 						/>
 					</div>
 				</div>
@@ -124,12 +122,14 @@ const ContactForm = () => {
 					<button>Send Message</button>
 				</div>
 			</form>
-			<Notification
-				{...notification}
-				// status={notification.status}
-				// title={notification.title}
-				// message={notification.message}
-			/>
+			{notification && (
+				<Notification
+					{...notification}
+					// status={notification.status}
+					// title={notification.title}
+					// message={notification.message}
+				/>
+			)}
 		</section>
 	);
 };
