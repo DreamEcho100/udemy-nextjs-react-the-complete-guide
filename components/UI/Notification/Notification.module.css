@@ -35,8 +35,8 @@
 
 @media (min-width: 768px) {
 	.notification {
-		width: rem;
-		left: calc(50% - 20rem);
+		width: 64rem;
+		left: calc(50% - 32rem);
 		border-top-right-radius: 0.6rem;
 		border-top-left-radius: 0.6rem;
 	}
