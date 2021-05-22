@@ -1,12 +1,12 @@
-import { Fragment } from 'react';
 import Head from 'next/head';
+import { Provider } from 'next-auth/client';
 
 import '@/styles/_globals.scss';
 import Layout from '@/components/Layouts/Layout/Layout';
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<Fragment>
+		<Provider session={pageProps.session}>
 			<Head>
 				<meta charSet='UTF-8' />
 				<meta httpEquiv='X-UA-Compatible' content='IE=edge' />
@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
-		</Fragment>
+		</Provider>
 	);
 }
 

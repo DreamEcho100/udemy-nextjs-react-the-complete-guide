@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { getSession, signIn } from 'next-auth/client';
+import { useRouter } from 'next/router';
 
 import classes from './Form.module.css';
 
@@ -36,6 +37,8 @@ const logInUser = async (email, password) => {
 };
 
 const Form = () => {
+	const router = useRouter();
+
 	const emailInputRef = useRef();
 	const passwordInputRef = useRef();
 
@@ -48,7 +51,8 @@ const Form = () => {
 	useEffect(() => {
 		getSession().then((session) => {
 			if (session) {
-				window.location.href = '/';
+				// window.location.href = '/';
+				router.replace('/profile');
 			} else {
 				setIsLoading(false);
 			}

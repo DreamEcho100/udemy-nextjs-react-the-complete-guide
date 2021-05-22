@@ -76,6 +76,7 @@
 .actions button:disabled,
 .actions .toggleBtn:disabled {
 	color: #f0ebf0;
+	cursor: not-allowed;
 }
 
 .actions .toggleBtn {
