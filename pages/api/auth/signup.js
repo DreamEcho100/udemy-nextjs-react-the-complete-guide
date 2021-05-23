@@ -46,6 +46,8 @@ export default async (req, res) => {
 		const result = await insertDocument(db, 'users', {
 			email,
 			password: hashedPassword,
+			role: 'user',
+			createdAt: new Date(),
 		});
 
 		client.close();

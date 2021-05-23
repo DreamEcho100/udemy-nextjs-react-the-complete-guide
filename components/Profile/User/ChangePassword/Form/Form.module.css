@@ -1,0 +1,70 @@
+.form {
+	width: 95%;
+	max-width: 25rem;
+	margin: 3.2rem auto;
+}
+
+.control {
+	margin-bottom: 0.8rem;
+}
+
+.control label {
+	font-weight: bold;
+	margin-bottom: 0.8rem;
+	color: #353336;
+	display: block;
+}
+
+.control input {
+	display: block;
+	font: inherit;
+	width: 100%;
+	border-radius: 0.4rem;
+	border: 0.1rem solid #38015c;
+	padding: 0.25rem;
+	background-color: #f7f0fa;
+}
+
+.action {
+	margin-top: 2.4rem;
+}
+
+.action .submitBtn {
+	font: inherit;
+	cursor: pointer;
+	padding: 0.8rem 2.4rem;
+	border-radius: 0.4rem;
+	background-color: #38015c;
+	color: white;
+	border: 0.1rem solid #38015c;
+}
+
+.action .submitBtn:hover {
+	background-color: #540d83;
+	border-color: #540d83;
+}
+
+.action .submitBtn:focus {
+	background-color: #2a0642;
+	border-color: #2a0642;
+}
+
+.action .submitBtn:disabled {
+	background-color: #b89fc9;
+	border-color: #b89fc9;
+	color: #f0ebf0;
+	cursor: not-allowed;
+}
+
+.message {
+}
+
+.message.error p {
+	color: red;
+	font-weight: 900;
+}
+
+.message.success p {
+	color: green;
+	font-weight: 900;
+}

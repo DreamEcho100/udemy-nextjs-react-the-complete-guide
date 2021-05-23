@@ -1,13 +1,12 @@
-/*
 // import { useState, useEffect } from 'react';
 // import { getSession } from 'next-auth/client';
 import { useState } from 'react';
 
-import classes from './User.module.css';
+import classes from './ChangePassword.module.css';
 
 import ProfileForm from './Form/Form';
 
-const User = () => {
+const ChangePassword = () => {
 	// const [isLoading, setIsLoading] = useState(true);
 
 	// useEffect(() => {
@@ -37,7 +36,7 @@ const User = () => {
 			status: '',
 			message: '',
 		});
-		 await fetch('/api/v1/user/change-password', {
+		/*const response = */ await fetch('/api/v1/user/change-password', {
 			method: 'PATCH',
 			body: JSON.stringify(passwordData),
 			headers: {
@@ -70,8 +69,7 @@ const User = () => {
 	};
 
 	return (
-		<section className={classes.profile}>
-			<h1>Your User Profile</h1>
+		<section className={classes.ChangePassword}>
 			<ProfileForm
 				onChangePassword={changePasswordHandler}
 				isPasswordChanging={isPasswordChanging}
@@ -83,39 +81,4 @@ const User = () => {
 	);
 };
 
-export default User;
-*/
-import React, { useState, Fragment } from 'react';
-
-import classes from './User.module.css';
-
-import ChangePassword from './ChangePassword/ChangePassword';
-import Modal from '../../UI/Modal/Modal';
-
-const User = () => {
-	const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
-
-	return (
-		<section className={classes.profile}>
-			<h1>Your User Profile</h1>
-			<button
-				className={classes.btn}
-				onClick={() => setShowChangePasswordModal(true)}
-			>
-				Change Password
-			</button>
-			{showChangePasswordModal && (
-				<Modal click={() => setShowChangePasswordModal(false)}>
-					<Fragment key='header'>
-						<h3>Change Password</h3>
-					</Fragment>
-					<Fragment key='body'>
-						<ChangePassword />
-					</Fragment>
-				</Modal>
-			)}
-		</section>
-	);
-};
-
-export default User;
+export default ChangePassword;
