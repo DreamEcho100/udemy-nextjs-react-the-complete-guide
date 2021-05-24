@@ -18,4 +18,4 @@ function printBasics() {
 printBasics();
 ```
 
-Learn more about it [here](https://academind.com)extraAttributesStart{"target":"\_blank","rel":"noopener noreferrer"}extraAttributesEnd.
+Learn more about it [here](https://academind.com)

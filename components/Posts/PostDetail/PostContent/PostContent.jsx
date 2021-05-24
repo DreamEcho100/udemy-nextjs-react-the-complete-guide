@@ -1,6 +1,7 @@
 import ReactMarkdown from 'react-markdown';
+import Link from 'next/link';
 import Image from 'next/image';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {
 	// atomDark,
 	// vsDark,
@@ -13,8 +14,8 @@ import classes from './PostContent.module.css';
 
 import PostHeader from './PostHeader/PostHeader';
 
-// SyntaxHighlighter.registerLanguage('js', js);
-// SyntaxHighlighter.registerLanguage('css', css);
+SyntaxHighlighter.registerLanguage('js', js);
+SyntaxHighlighter.registerLanguage('css', css);
 
 const PostContent = ({ post }) => {
 	const imagePath = `/images/posts/${post.slug}/${post.image}`;
@@ -30,67 +31,7 @@ const PostContent = ({ post }) => {
 		//     />
 		//   );
 		// },
-		p(paragraph) {
-			const { node, ...props } = paragraph;
-
-			/*
-			if (node.children[1] && node.children[1].tagName === 'a') {
-				if (
-					node.children[2] &&
-					node.children[2].value.includes('extraAttributesStart')
-				) {
-					const EAS = 'extraAttributesStart';
-					const EAE = 'extraAttributesEnd';
-
-					const EASIndex = node.children[2].value.indexOf(EAS);
-					const EAEIndex = node.children[2].value.indexOf(EAE);
-
-					const anchorHref = node.children[1].properties.href;
-
-					let anchorAttributes = {};
-					let anchorAttributesError = '';
-					try {
-						anchorAttributes = JSON.parse(
-							node.children[2].value.substr(
-								EAS.length + EASIndex,
-								EAEIndex - EAE.length - 2
-							)
-						);
-					} catch (error) {
-						console.error(error);
-						anchorAttributesError = error.message;
-					}
-
-					const firstText = `${node.children[0].value}`;
-					const anchorText = `${node.children[1].children[0].value}`;
-					const lastText = node.children[2].value.substr(EAEIndex + EAE.length);
-
-					return (
-						<p>
-							{firstText}
-							{anchorAttributesError ? (
-								<div
-									style={{ color: 'red', fontSize: '4rem', fontWeight: '900' }}
-								>
-									{anchorAttributesError}
-								</div>
-							) : (
-								<a
-									href={anchorHref}
-									{...anchorAttributes}
-									// target='_blank'
-									rel='noopener noreferrer'
-								>
-									{anchorText}
-								</a>
-							)}
-							{lastText}
-						</p>
-					);
-				}
-			}
-			*/
-
+		p({ children, node }) {
 			if (node.children[0].tagName === 'img') {
 				const image = node.children[0];
 				let imgSrc;
@@ -106,13 +47,41 @@ const PostContent = ({ post }) => {
 
 				return (
 					<div className={classes.image}>
-						<Image src={imgSrc} alt={image.alt} width={600} height={300}
-							layout='responsive' />
+						<Image
+							src={imgSrc}
+							alt={image.alt}
+							width={600}
+							height={300}
+							layout='responsive'
+						/>
 					</div>
 				);
 			}
 
-			return <p>{paragraph.children}</p>;
+			return <p>{children}</p>;
+		},
+
+		a({ href, children }) {
+			// href.startsWith('http://');
+			// href.startsWith('https://');
+			// /^http:\/\//.test(href);
+			// /^https:\/\//.test(href);
+
+			if (href.startsWith('http://') || href.startsWith('https://')) {
+				return (
+					<Link href={href}>
+						<a target='_blank' rel='noopener noreferrer'>
+							{children}
+						</a>
+					</Link>
+				);
+			}
+
+			return (
+				<Link href={href}>
+					<a>{children}</a>
+				</Link>
+			);
 		},
 
 		code({ node, inline, className, children, ...props }) {
